@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body onload="initMap()">
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+<div>
+    <input id="address" type="textbox" value="Sydney, NSW">
+    <input type="button" value="Encode" onclick="googleMap.codeAddress()">
+</div>
+
+<script src="google-map.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7A8hqLh48Es-lXMV83pBOpMy96HrVuWc&callback=googleMap.initMap">
+</script>
+</body>
+</html>
