@@ -9,12 +9,22 @@
 <body>
 <div id="top-container">
 
+	<div>
+	<form>
+		<label>Choose a course</label>
+		<select id="course-name-selection" onchange="updateCard()"></select>
+
+		<label>Choose a Tee</label>
+		<select id="tee-name-selection" onchange="updateCard()"></select>
+	</form>
+	</div>
+
 	<div id="card-container">
 
-		<div class="card-column">
-			<div class="column-cell">100</div>
-			<div class="column-cell">100</div>
-			<div class="column-cell">100</div>
+		<div class="card-column" id="column-1">
+			<div class="column-cell" id="row-1-column-1">100</div>
+			<div class="column-cell" id="row-2-column-1">100</div>
+			<div class="column-cell" id="row-3-column-1">100</div>
 		</div>
 		<div class="card-column">
 			<div class="column-cell">600</div>
