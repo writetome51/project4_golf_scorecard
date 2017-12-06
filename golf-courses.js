@@ -2,14 +2,14 @@ var courses;
 var course;
 var local_obj = {latitude:40.4426135, longitude:-111.8631116, radius:100};
 var courseNames=[];
-var currentCourse;
 var courseNameOptions='';
-var currentCourseName;
+var currentCourseIndex;
 var teeNameOptions= '';
 var teeNames=[];
 var currentTeeName;
 var courseHrefs = [];
 var currentCourseHref;
+var teeTypes=[];
 var teeYardages;
 
 
@@ -26,16 +26,11 @@ function loadCourses(){
 
 			loadCourseNames();
 			loadCourseNameOptions();
-			loadCurrentCourseName();
-			console.log(currentCourseName);
+			loadcurrentCourseIndex();
 
 			// loadCourseHrefs();
 			loadCurrentCourseHref();
 			loadCourse(currentCourseHref);
-
-
-
-			loadTeeNameOptions();
 
 		}
 	);
@@ -60,8 +55,8 @@ function loadCourseNameOptions(){
 
 
 
-function loadCurrentCourseName(){
-	currentCourseName =  $('#course-name-options').val();
+function loadcurrentCourseIndex(){
+	currentCourseIndex =  $('#course-name-options').val();
 }
 
 
@@ -74,19 +69,38 @@ function loadCourseHrefs(){
 
 
 function loadCurrentCourseHref(){
-	currentCourse = courses.courses[currentCourseName];
+	var currentCourse = courses.courses[currentCourseIndex];
 	currentCourseHref = currentCourse.href;
 }
 
 
 function loadCourse(href){
 	$.get(href, function(data){
-		course = JSON.parse(data);
+		course = data.course;
+		loadTeeTypes();
+		loadTeeNames();
+		loadTeeNameOptions();
 	});
 }
 
 
+function loadTeeTypes(){
+	teeTypes = course.tee_types;
+	console.log(teeTypes);
+}
+
+
+function loadTeeNames(){
+	for (var i=0; i < teeTypes.length;  ++i){
+		teeNames.push(teeTypes[i].tee_type);
+	}
+}
+
 
 function loadTeeNameOptions(){
-
+	for (var i=0;  i < teeNames.length;  ++i){
+		teeNameOptions += '<option value="' + i  +  '" >' +
+			teeNames[i] + '</option>';
+	}
+	$('#tee-name-options').html(teeNameOptions);
 }
