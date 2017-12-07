@@ -16,7 +16,7 @@
     padding:10px;
     margin:auto;
     position:relative;
-    border-collapse: collapse;
+
 }
 
 .card-column{
@@ -40,18 +40,23 @@
 
 #tee-name-options{width:90px;}
 
-#tee-name-options-label, #tee-name-options{position:relative; top:3px;}
+#tee-name-options-label, #tee-name-options{position:relative; top:0px;}
 
-div.form-control{border:none;}
+.form-control{border:none;}
 
-.player-name-input{width:120px; height:100%;  text-align: center;
-    padding-top:0; padding-bottom:0;position: relative; top:1px;right:2px;
+.player-name-input{width:120px;   text-align: center;
+    padding-top:0; padding-bottom:0;position: relative; top:3px;right:2px;
+    border:none;
 }
 
-.player-name-input-container{width:120px;padding-top:0px; padding-bottom:0px;}
+.player-name-input-container{width:120px;padding-top:0; padding-bottom:0;
+    border-bottom:1px solid #d3d3d3;
+}
 
 .collapsed{display:none;}
 
 .special-column{width:43px;}
 
 .first-column{border-left:none;}
+
+.tee-row{padding-top:5px; padding-bottom:5px; height:30px;}

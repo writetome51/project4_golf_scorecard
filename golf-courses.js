@@ -122,7 +122,6 @@ function loadEvents(){
 		var name = $(this).val();
 		if (name !== ''){
 			var cell = $(this).closest('.player-name-input-container').next('.player-name-cell');
-			console.log(cell);
 
 			$(this).closest('.player-name-input-container').addClass('collapsed');
 			cell.removeClass('collapsed');
