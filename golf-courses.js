@@ -7,33 +7,35 @@ var currentCourseIndex;
 var teeNameOptions= '';
 var teeNames=[];
 var currentTeeName;
-var courseHrefs = [];
 var currentCourseHref;
 var teeTypes=[];
 var teeYardages;
 
 
-loadCourses();
+loadEverything();
 
 
-function loadCourses(){
+function loadEverything(){
 	$.post('https://golf-courses-api.herokuapp.com/courses',
 		local_obj,
 		function(data){
-			courses = JSON.parse(data);
-
-			console.log(courses);
-
-			loadCourseNames();
-			loadCourseNameOptions();
-			loadcurrentCourseIndex();
-
-			// loadCourseHrefs();
-			loadCurrentCourseHref();
-			loadCourse(currentCourseHref);
-
+			loadAllCourseData(data);
+			updateTeesAndCard();
 		}
 	);
+}
+
+
+function loadAllCourseData(data){
+	loadCourses(data);
+	console.log(courses);
+	loadCourseNames();
+	loadCourseNameOptions();
+}
+
+
+function loadCourses(data){
+	courses = JSON.parse(data);
 }
 
 
@@ -42,7 +44,6 @@ function loadCourseNames(){
 		courseNames.push(courses.courses[p].name);
 	}
 }
-
 
 
 function loadCourseNameOptions(){
@@ -55,17 +56,18 @@ function loadCourseNameOptions(){
 
 
 
-function loadcurrentCourseIndex(){
+function updateTeesAndCard(){
+	loadCurrentCourseIndex();
+	loadCurrentCourseHref();
+	loadCourse(currentCourseHref);
+	updateCard();
+}
+
+
+function loadCurrentCourseIndex(){
 	currentCourseIndex =  $('#course-name-options').val();
 }
 
-
-
-function loadCourseHrefs(){
-	for (var p in courses.courses){
-		courseHrefs.push(courses.courses[p].href);
-	}
-}
 
 
 function loadCurrentCourseHref(){
@@ -84,13 +86,20 @@ function loadCourse(href){
 }
 
 
+
+function updateCard(){
+
+}
+
+
+
 function loadTeeTypes(){
 	teeTypes = course.tee_types;
-	console.log(teeTypes);
 }
 
 
 function loadTeeNames(){
+	teeNames=[];
 	for (var i=0; i < teeTypes.length;  ++i){
 		teeNames.push(teeTypes[i].tee_type);
 	}
@@ -98,6 +107,7 @@ function loadTeeNames(){
 
 
 function loadTeeNameOptions(){
+	teeNameOptions='';
 	for (var i=0;  i < teeNames.length;  ++i){
 		teeNameOptions += '<option value="' + i  +  '" >' +
 			teeNames[i] + '</option>';
