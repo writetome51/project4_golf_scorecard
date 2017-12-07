@@ -21,6 +21,7 @@ function loadEverything(){
 		function(data){
 			loadAllCourseData(data);
 			updateTeesAndCard();
+			loadEvents();
 		}
 	);
 }
@@ -113,4 +114,29 @@ function loadTeeNameOptions(){
 			teeNames[i] + '</option>';
 	}
 	$('#tee-name-options').html(teeNameOptions);
+}
+
+
+function loadEvents(){
+	$('.player-name-input').blur(function(){
+		var name = $(this).val();
+		if (name !== ''){
+			var cell = $(this).closest('.player-name-input-container').next('.player-name-cell');
+			console.log(cell);
+
+			$(this).closest('.player-name-input-container').addClass('collapsed');
+			cell.removeClass('collapsed');
+			cell.text(name);
+		}
+	});
+
+
+	$('.player-name-cell').click(function(){
+		var name = $(this).text();
+		$(this).text('');
+		$(this).prev('.player-name-input-container').removeClass('collapsed');
+		$(this).addClass('collapsed');
+	});
+
+
 }

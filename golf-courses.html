@@ -27,16 +27,41 @@
 
 		<div class="card-column" id="label-column">
 			<div class="column-cell hole-row" id="hole-cell">Hole</div>
-			<div class="">
+			<div class="" id="tee-name-options-container">
 				<label id="tee-name-options-label">Tee</label>
 				<select id="tee-name-options" onchange="updateCard()"></select>
 			</div>
 			<div class="column-cell par-row" id="par-column-1">Par</div>
 			<div class="column-cell handicap-row" id="handicap-column-1">Handicap</div>
-			<div class="column-cell player-1-row" id="hole-cell">Hole</div>
-			<div class="column-cell player-2-row" id="hole-cell">Hole</div>
-			<div class="column-cell player-3-row" id="hole-cell">Hole</div>
-			<div class="column-cell player-4-row" id="hole-cell">Hole</div>
+
+			<!------   player name input     ---------->
+			<div class="column-cell player-1-row  player-name-input-container" id="player-1-input-cell">
+				<input type="text" class="player-name-input" placeholder="player1 name">
+			</div>
+			<div class="column-cell player-1-row player-name-cell collapsed"  id="player-1-cell">
+
+			</div>
+
+			<div class="column-cell player-1-row  player-name-input-container" id="player-2-input-cell">
+				<input type="text" class="player-name-input" placeholder="player2 name">
+			</div>
+			<div class="column-cell player-1-row player-name-cell collapsed"  id="player-2-cell">
+
+			</div>
+
+			<div class="column-cell player-1-row  player-name-input-container" id="player-3-input-cell">
+				<input type="text" class="player-name-input" placeholder="player3 name">
+			</div>
+			<div class="column-cell player-1-row player-name-cell collapsed"  id="player-3-cell">
+
+			</div>
+
+			<div class="column-cell player-1-row  player-name-input-container" id="player-4-input-cell">
+				<input type="text" class="player-name-input" placeholder="player4 name">
+			</div>
+			<div class="column-cell player-1-row player-name-cell collapsed"  id="player-4-cell">
+
+			</div>
 		</div>
 
 		<div class="card-column" id="hole-1-column">
@@ -46,6 +71,8 @@
 			<div class="column-cell row-1" id="hole-column-2">1</div>
 			<div class="column-cell row-2" id="par-column-2">100</div>
 			<div class="column-cell row-3" id="handicap-column-2">100</div>
+			<div class="column-cell row-1" id="hole-column-2"></div>
+			<div class="column-cell row-2" id="par-column-2">100</div>
 		</div>
 
 		<div class="card-column" id="hole-1-column">
