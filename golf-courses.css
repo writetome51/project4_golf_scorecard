@@ -21,7 +21,7 @@
 
 .card-column{
     float:left;
-
+    width:30px;
     margin:0;
     border-left:1px solid #d3d3d3;
     position:relative;
@@ -31,7 +31,7 @@
     width:100%;
     height:25px;
     text-align: center;
-    padding: 3px 3px;
+    padding: 3px 0px;
     border-bottom:1px solid #d3d3d3;
 }
 
@@ -44,10 +44,14 @@
 
 .form-control{border:none;}
 
-.player-name-input{width:120px;   text-align: center;
-    padding-top:0; padding-bottom:0;position: relative; top:3px;right:2px;
+.player-name-input{
+    font-weight: normal;
+    width:120px;   text-align: center;
+    padding-top:0; padding-bottom:0;
+    position: relative; top:3px;right:2px;
     border:none;
 }
+
 
 .player-name-input-cell{width:120px;padding-top:0; padding-bottom:0;
     border-bottom:1px solid #d3d3d3;
@@ -64,7 +68,9 @@
 .bottom-row{border-bottom: none;}
 
 
-#label-column{font-weight: bold;}
+#label-column{font-weight: bold; min-width:126px; padding-right:0;}
+
+#label-column div{width:100%;}
 
 #images-container{width:870px; margin:auto; margin-top:15px; padding:auto;}
 
