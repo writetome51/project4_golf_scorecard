@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce1249f-e762-4469-bf2e-5437936f640a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/golf-courses.css" afterPath="$PROJECT_DIR$/golf-courses.css" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="303" column="75" lean-forward="false" selection-start-line="303" selection-start-column="75" selection-end-line="303" selection-end-column="75" />
+            <state relative-caret-position="55">
+              <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -30,8 +29,8 @@
       <file leaf-file-name="golf-courses.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/golf-courses.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="271">
+              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -70,10 +69,10 @@
       <find>player-name-input-container</find>
       <find>tee-row</find>
       <find>&quot;column-cell par-row&quot; id=&quot;handicap</find>
+      <find>player4-row</find>
+      <find>player-</find>
     </findStrings>
     <replaceStrings>
-      <replace>currentCourseIndex</replace>
-      <replace>special-column</replace>
       <replace>tee-row</replace>
       <replace>total-column</replace>
       <replace>hole-row</replace>
@@ -102,6 +101,8 @@
       <replace>player-name-input-cell</replace>
       <replace>par-row</replace>
       <replace>&quot;column-cell handicap-row&quot; id=&quot;handicap</replace>
+      <replace>player4-row bottom-row</replace>
+      <replace>player</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -200,12 +201,12 @@
       <workItem from="1512657530738" duration="140000" />
       <workItem from="1512679317910" duration="7144000" />
       <workItem from="1512687680571" duration="311000" />
-      <workItem from="1512743801090" duration="3660000" />
+      <workItem from="1512743801090" duration="4231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40137000" />
+    <option name="totallyTimeSpent" value="40708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1033" height="991" extended-state="0" />
@@ -461,16 +462,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/golf-courses.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="271">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="303" column="75" lean-forward="false" selection-start-line="303" selection-start-column="75" selection-end-line="303" selection-end-column="75" />
+        <state relative-caret-position="55">
+          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
           <folding />
         </state>
       </provider>
