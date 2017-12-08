@@ -7,6 +7,7 @@ var currentCourseIndex;
 var teeNameOptions= '';
 var teeNames=[];
 var currentTeeName;
+var currentTeeIndex;
 var currentCourseHref;
 var teeTypes=[];
 var teeYardages;
@@ -29,7 +30,7 @@ function loadEverything(){
 
 function loadAllCourseData(data){
 	loadCourses(data);
-	console.log(courses);
+	//console.log(courses);
 	loadCourseNames();
 	loadCourseNameOptions();
 }
@@ -80,6 +81,8 @@ function loadCurrentCourseHref(){
 function loadCourse(href){
 	$.get(href, function(data){
 		course = data.course;
+		console.log(course);
+
 		loadTeeTypes();
 		loadTeeNames();
 		loadTeeNameOptions();
@@ -87,10 +90,6 @@ function loadCourse(href){
 }
 
 
-
-function updateCard(){
-
-}
 
 
 
@@ -117,6 +116,31 @@ function loadTeeNameOptions(){
 }
 
 
+// Get number of yards for each hole (based on selected tee) by writing:
+// holes[i].tee_boxes[currentTeeIndex].yards
+
+function updateCard(){
+	fillTeeRow();
+
+}
+
+
+function fillTeeRow(){
+	loadCurrentTeeIndex();
+	loadCurrentTeeName();
+	fillEveryHoleCellWithYardage();
+}
+
+
+function loadCurrentTeeIndex(){
+	currentTeeIndex =  $('#tee-name-options').val();
+}
+
+function loadCurrentTeeName(){
+	currentTeeName = teeNames[currentTeeIndex];
+}
+
+
 function loadEvents(){
 	$('.player-name-input').blur(function(){
 		var name = $(this).val();
@@ -128,14 +152,5 @@ function loadEvents(){
 			cell.text(name);
 		}
 	});
-
-
-	$('.player-name-cell').click(function(){
-		var name = $(this).text();
-		$(this).text('');
-		$(this).prev('.player-name-input-container').removeClass('collapsed');
-		$(this).addClass('collapsed');
-	});
-
 
 }

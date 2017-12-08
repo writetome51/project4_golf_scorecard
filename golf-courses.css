@@ -68,7 +68,7 @@
 .bottom-row{border-bottom: none;}
 
 
-#label-column{font-weight: bold; min-width:126px; padding-right:0;}
+#label-column{font-weight: bold; width:128px; padding-right:0;}
 
 #label-column div{width:100%;}
 
