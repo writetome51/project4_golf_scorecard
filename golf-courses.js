@@ -28,7 +28,7 @@ function loadEverything(){
 		function(data){
 			loadAllCourseData(data);
 
-		//	loadEvents();
+			loadEvents();
 		}
 	);
 }
@@ -242,13 +242,13 @@ function loadDataOfCurrentTeeForEachHole(){
 			}
 		}
 		if ( ! yardagesOfCurrentTeeForEachHole[hole]){
-			yardagesOfCurrentTeeForEachHole.push(' - ');
+			yardagesOfCurrentTeeForEachHole[hole] = ' - ';
 		}
 		if ( ! parOfCurrentTeeForEachHole[hole]){
-			parOfCurrentTeeForEachHole.push(' - ');
+			parOfCurrentTeeForEachHole[hole] = ' - ';
 		}
 		if ( ! hcpOfCurrentTeeForEachHole[hole]){
-			hcpOfCurrentTeeForEachHole.push(' - ');
+			hcpOfCurrentTeeForEachHole[hole] = ' - ';
 		}
 	}
 
@@ -264,19 +264,19 @@ function loadDataOfCurrentTeeForEachHole(){
 }
 
 
+function updateStrokeTotals(obj){
+
+}
 
 
 function loadEvents(){
-	$('.player-name-input').blur(function(){
-		var name = $(this).val();
-		if (name !== ''){
-			var cell = $(this).closest('.player-name-input-container')
-				.next('.player-name-cell');
-
-			$(this).closest('.player-name-input-container').addClass('collapsed');
-			cell.removeClass('collapsed');
-			cell.text(name);
+	$('.strokes-input').blur(function(){
+		var value = $(this).val();
+		if (isNaN(value)){
+			$(this).val(0);
+		}
+		else{
+			updateStrokeTotals($(this));
 		}
 	});
-
 }
