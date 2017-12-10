@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce1249f-e762-4469-bf2e-5437936f640a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/golf-courses.js" afterPath="$PROJECT_DIR$/golf-courses.js" />
+      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,21 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2698">
-              <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="golf-courses.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/golf-courses.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
+            <state relative-caret-position="403">
+              <caret line="455" column="10" lean-forward="false" selection-start-line="455" selection-start-column="10" selection-end-line="455" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -112,8 +102,8 @@
       <list>
         <option value="$PROJECT_DIR$/golf-courses.html" />
         <option value="$PROJECT_DIR$/golf-courses.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/golf-courses.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -211,12 +201,12 @@
       <workItem from="1512855197896" duration="1526000" />
       <workItem from="1512861727808" duration="8044000" />
       <workItem from="1512876237981" duration="5590000" />
-      <workItem from="1512883157404" duration="9638000" />
+      <workItem from="1512883157404" duration="10111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73070000" />
+    <option name="totallyTimeSpent" value="73543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="23" width="1052" height="733" extended-state="0" />
@@ -559,18 +549,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/golf-courses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2698">
-          <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="46" />
+        <state relative-caret-position="394">
+          <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/golf-courses.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="285" column="37" lean-forward="false" selection-start-line="285" selection-start-column="37" selection-end-line="285" selection-end-column="37" />
+        <state relative-caret-position="403">
+          <caret line="455" column="10" lean-forward="false" selection-start-line="455" selection-start-column="10" selection-end-line="455" selection-end-column="10" />
           <folding />
         </state>
       </provider>
