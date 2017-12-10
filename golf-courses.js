@@ -14,6 +14,13 @@ var teeYardages;
 var yardagesOfCurrentTeeForEachHole = [];
 var parOfCurrentTeeForEachHole=[];
 var hcpOfCurrentTeeForEachHole=[];
+var playerStrokes = {
+	player1:[],
+	player2:[],
+	player3:[],
+	player4:[]
+};
+
 
 
 $(document).ready(function(){
@@ -264,19 +271,69 @@ function loadDataOfCurrentTeeForEachHole(){
 }
 
 
-function updateStrokeTotals(obj){
+function updateStrokeTotals(player){
+	loadPlayerStrokes(player);
+	fillTotalCell(player + '-cell-out', playerStrokes[player], [0,9]);
+	console.log(playerStrokes[player]);
+	fillTotalCell(player + '-cell-in', playerStrokes[player], [0,9]);
+	var arr = [ Number($('#' + player  + '-cell-out').text()) ,
+		Number($('#' + player + '-cell-in').text()) ];
+	fillTotalCell('tee-cell-total', arr, [0, arr.length]);
+}
 
+
+function loadPlayerStrokes(player){
+	var selector = '.' + player + '-row' + ':not(.total-cell):not(.label-cell)';
+	var cells = $(selector).children('.strokes-input');
+
+	for (var i=0; i < cells.length; ++i){
+		if (cells[i].value === ''){
+			playerStrokes[player].push(0);
+		}
+		else{
+			playerStrokes[player].push( Number(cells[i].value) );
+		}
+	}
+	//console.log(playerStrokes[player]);
 }
 
 
 function loadEvents(){
-	$('.strokes-input').blur(function(){
+	$('.player1-row .strokes-input').blur(function(){
 		var value = $(this).val();
 		if (isNaN(value)){
 			$(this).val(0);
 		}
 		else{
-			updateStrokeTotals($(this));
+			updateStrokeTotals('player1');
 		}
 	});
+	$('.player2-row .strokes-input').blur(function(){
+		var value = $(this).val();
+		if (isNaN(value)){
+			$(this).val(0);
+		}
+		else{
+			updateStrokeTotals('player2');
+		}
+	});
+	$('.player3-row .strokes-input').blur(function(){
+		var value = $(this).val();
+		if (isNaN(value)){
+			$(this).val(0);
+		}
+		else{
+			updateStrokeTotals('player3');
+		}
+	});
+	$('.player4-row .strokes-input').blur(function(){
+		var value = $(this).val();
+		if (isNaN(value)){
+			$(this).val(0);
+		}
+		else{
+			updateStrokeTotals('player4');
+		}
+	});
+
 }

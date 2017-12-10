@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce1249f-e762-4469-bf2e-5437936f640a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/golf-courses.js" afterPath="$PROJECT_DIR$/golf-courses.js" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,21 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="14">
+              <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="golf-courses.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="golf-courses.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/golf-courses.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4005">
-              <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="277" column="36" lean-forward="false" selection-start-line="277" selection-start-column="36" selection-end-line="277" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -41,13 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total</find>
-      <find>row-2</find>
-      <find>special-column</find>
-      <find>row-1</find>
-      <find>row-3</find>
-      <find>tee-name-options-</find>
-      <find>-column-2</find>
       <find>player-name-input-container</find>
       <find>tee-row</find>
       <find>&quot;column-cell par-row&quot; id=&quot;handicap</find>
@@ -71,6 +64,13 @@
       <find>par-cell-out</find>
       <find>-cell-out</find>
       <find>hcp</find>
+      <find>:not</find>
+      <find>cells[i</find>
+      <find>.push</find>
+      <find>filltotal</find>
+      <find>fillA</find>
+      <find>total-cell</find>
+      <find>filltotalcell</find>
     </findStrings>
     <replaceStrings>
       <replace>player-name-input-cell</replace>
@@ -113,8 +113,8 @@
       <list>
         <option value="$PROJECT_DIR$/golf-courses.html" />
         <option value="$PROJECT_DIR$/golf-courses.css" />
-        <option value="$PROJECT_DIR$/golf-courses.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/golf-courses.js" />
       </list>
     </option>
   </component>
@@ -127,7 +127,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-16" />
     <option name="y" value="23" />
-    <option name="width" value="1173" />
+    <option name="width" value="1052" />
     <option name="height" value="733" />
   </component>
   <component name="ProjectView">
@@ -212,18 +212,18 @@
       <workItem from="1512855197896" duration="1526000" />
       <workItem from="1512861727808" duration="8044000" />
       <workItem from="1512876237981" duration="5590000" />
-      <workItem from="1512883157404" duration="5711000" />
+      <workItem from="1512883157404" duration="9444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69143000" />
+    <option name="totallyTimeSpent" value="72876000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="23" width="1173" height="733" extended-state="0" />
+    <frame x="-16" y="23" width="1052" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10763889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12027158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -560,18 +560,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/golf-courses.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4005">
-          <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+        <state relative-caret-position="14">
+          <caret line="229" column="46" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/golf-courses.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="231">
+          <caret line="277" column="36" lean-forward="false" selection-start-line="277" selection-start-column="36" selection-end-line="277" selection-end-column="36" />
           <folding />
         </state>
       </provider>
