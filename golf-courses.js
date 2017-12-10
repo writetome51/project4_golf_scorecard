@@ -278,7 +278,7 @@ function updateStrokeTotals(player){
 	fillTotalCell(player + '-cell-in', playerStrokes[player], [0,9]);
 	var arr = [ Number($('#' + player  + '-cell-out').text()) ,
 		Number($('#' + player + '-cell-in').text()) ];
-	fillTotalCell('tee-cell-total', arr, [0, arr.length]);
+	fillTotalCell(player + '-cell-total', arr, [0, arr.length]);
 }
 
 
