@@ -274,7 +274,6 @@ function loadDataOfCurrentTeeForEachHole(){
 function updateStrokeTotals(player){
 	loadPlayerStrokes(player);
 	fillTotalCell(player + '-cell-out', playerStrokes[player], [0,9]);
-	console.log(playerStrokes[player]);
 	fillTotalCell(player + '-cell-in', playerStrokes[player], [0,9]);
 	var arr = [ Number($('#' + player  + '-cell-out').text()) ,
 		Number($('#' + player + '-cell-in').text()) ];
@@ -294,7 +293,6 @@ function loadPlayerStrokes(player){
 			playerStrokes[player].push( Number(cells[i].value) );
 		}
 	}
-	//console.log(playerStrokes[player]);
 }
 
 
