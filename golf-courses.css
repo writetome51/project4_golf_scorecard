@@ -44,12 +44,16 @@
 
 .form-control{border:none;}
 
-.player-name-input{
+input{
+    width:100%;
     font-weight: normal;
-    width:120px;   text-align: center;
+    text-align: center;
     padding-top:0; padding-bottom:0;
-    position: relative; top:3px;right:2px;
     border:none;
+}
+
+.player-name-input{
+    position: relative; top:3px;right:2px;
 }
 
 

@@ -126,7 +126,8 @@ function loadTeeNameOptions(){
 
 function updateCells(){
 	fillTeeRow();
-
+	fillParRow();
+	fillHandicapRow();
 }
 
 
@@ -134,7 +135,16 @@ function fillTeeRow(){
 	loadCurrentTeeIndex();
 	loadCurrentTeeName();
 	fillEveryTeeCellWithYardage();
-	//fillTotalCells();
+}
+
+
+function fillParRow(){
+
+}
+
+
+function fillHandicapRow(){
+
 }
 
 
@@ -215,9 +225,6 @@ function loadYardagesOfCurrentTeeForEachHole(){
 }
 
 
-function fillTotalCells(){
-
-}
 
 
 function loadEvents(){
