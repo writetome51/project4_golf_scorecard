@@ -151,21 +151,43 @@ function loadCurrentTeeName(){
 function fillEveryTeeCellWithYardage(){
 	loadYardagesOfCurrentTeeForEachHole();
 	fillHoleCells('tee-row', yardagesOfCurrentTeeForEachHole);
+	fillAllTeeTotals();
+}
+
+
+function fillAllTeeTotals(){
+	fillTotalCell('tee-cell-out', yardagesOfCurrentTeeForEachHole, [0,9]);
+	fillTotalCell('tee-cell-in', yardagesOfCurrentTeeForEachHole, [0,9]);
+	var arr = [ Number($('#tee-cell-out').text()) , Number($('#tee-cell-in').text()) ];
+	fillTotalCell('tee-cell-total', arr, [0, arr.length]);
 }
 
 
 function fillHoleCells(rowClass, dataForCells){
 	var selector = '.' + rowClass + ':not(.total-cell):not(.label-cell)';
 	var cells = $(selector);
-	console.log(cells);
 	for (var i=0;  i < cells.length;  ++i){
 		cells[i].innerText = (dataForCells[i]);
 	}
 }
 
 
-function fillTotalCells(){
+function fillTotalCell(cellID, arrayToTally, range){
+	var selector = '#' + cellID;
+	arrayToTally = arrayToTally.splice(range[0], range[1]);
+	var total = getTally(arrayToTally);
+	$(selector).text(total);
+}
 
+
+function getTally(arrayToTally){
+	for (var i=0,sum=0; i < arrayToTally.length; ++i){
+		if (isNaN(arrayToTally[i])){
+			arrayToTally[i] = 0;
+		}
+		sum += arrayToTally[i];
+	}
+	return sum;
 }
 
 
@@ -182,10 +204,13 @@ function loadYardagesOfCurrentTeeForEachHole(){
 				break;
 			}
 		}
-
 		if ( ! yardagesOfCurrentTeeForEachHole[hole]){
 			yardagesOfCurrentTeeForEachHole.push(' - ');
 		}
+	}
+
+	while (yardagesOfCurrentTeeForEachHole.length < 18){
+		yardagesOfCurrentTeeForEachHole.push(' - ');
 	}
 }
 
