@@ -12,6 +12,8 @@ var currentCourseHref;
 var teeTypes=[];
 var teeYardages;
 var yardagesOfCurrentTeeForEachHole = [];
+var parOfCurrentTeeForEachHole=[];
+var hcpOfCurrentTeeForEachHole=[];
 
 
 $(document).ready(function(){
@@ -89,7 +91,7 @@ function loadCurrentCourseHref(){
 function loadCourse(href){
 	$.get(href, function(data){
 		course = data.course;
-		console.log(course);
+	//	console.log(course);
 
 		loadTeeTypes();
 		loadTeeNames();
@@ -125,26 +127,33 @@ function loadTeeNameOptions(){
 
 
 function updateCells(){
+	loadCurrentTee();
+	loadDataOfCurrentTeeForEachHole();
 	fillTeeRow();
 	fillParRow();
 	fillHandicapRow();
 }
 
 
-function fillTeeRow(){
+function loadCurrentTee(){
 	loadCurrentTeeIndex();
 	loadCurrentTeeName();
-	fillEveryTeeCellWithYardage();
+}
+
+
+function fillTeeRow(){
+	fillHoleCells('tee-row', yardagesOfCurrentTeeForEachHole);
+	fillAllTeeTotals();
 }
 
 
 function fillParRow(){
-
+	fillHoleCells('par-row', parOfCurrentTeeForEachHole);
 }
 
 
 function fillHandicapRow(){
-
+	fillHoleCells('handicap-row', hcpOfCurrentTeeForEachHole);
 }
 
 
@@ -158,10 +167,13 @@ function loadCurrentTeeName(){
 }
 
 
-function fillEveryTeeCellWithYardage(){
-	loadYardagesOfCurrentTeeForEachHole();
-	fillHoleCells('tee-row', yardagesOfCurrentTeeForEachHole);
-	fillAllTeeTotals();
+
+function fillHoleCells(rowClass, dataForCells){
+	var selector = '.' + rowClass + ':not(.total-cell):not(.label-cell)';
+	var cells = $(selector);
+	for (var i=0;  i < cells.length;  ++i){
+		cells[i].innerText = (dataForCells[i]);
+	}
 }
 
 
@@ -173,13 +185,6 @@ function fillAllTeeTotals(){
 }
 
 
-function fillHoleCells(rowClass, dataForCells){
-	var selector = '.' + rowClass + ':not(.total-cell):not(.label-cell)';
-	var cells = $(selector);
-	for (var i=0;  i < cells.length;  ++i){
-		cells[i].innerText = (dataForCells[i]);
-	}
-}
 
 
 function fillTotalCell(cellID, arrayToTally, range){
@@ -201,9 +206,13 @@ function getTally(arrayToTally){
 }
 
 
-function loadYardagesOfCurrentTeeForEachHole(){
+
+function loadDataOfCurrentTeeForEachHole(){
 
 	yardagesOfCurrentTeeForEachHole = [];
+	parOfCurrentTeeForEachHole=[];
+	hcpOfCurrentTeeForEachHole=[];
+
 	for (var hole=0, thisHole;  hole < course.holes.length;  ++hole){
 		thisHole = course.holes[hole];
 
@@ -211,16 +220,30 @@ function loadYardagesOfCurrentTeeForEachHole(){
 			currentTee = thisHole.tee_boxes[tee_box];
 			if (currentTee.tee_type === currentTeeName){
 				yardagesOfCurrentTeeForEachHole.push(currentTee.yards);
+				parOfCurrentTeeForEachHole.push(currentTee.par);
+				hcpOfCurrentTeeForEachHole.push(currentTee.hcp);
 				break;
 			}
 		}
 		if ( ! yardagesOfCurrentTeeForEachHole[hole]){
 			yardagesOfCurrentTeeForEachHole.push(' - ');
 		}
+		if ( ! parOfCurrentTeeForEachHole[hole]){
+			parOfCurrentTeeForEachHole.push(' - ');
+		}
+		if ( ! hcpOfCurrentTeeForEachHole[hole]){
+			hcpOfCurrentTeeForEachHole.push(' - ');
+		}
 	}
 
 	while (yardagesOfCurrentTeeForEachHole.length < 18){
 		yardagesOfCurrentTeeForEachHole.push(' - ');
+	}
+	while (parOfCurrentTeeForEachHole.length < 18){
+		parOfCurrentTeeForEachHole.push(' - ');
+	}
+	while (hcpOfCurrentTeeForEachHole.length < 18){
+		hcpOfCurrentTeeForEachHole.push(' - ');
 	}
 }
 
