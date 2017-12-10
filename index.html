@@ -26,38 +26,32 @@
 	<div id="card-container">
 
 		<div class="card-column first-column" id="label-column">
-			<div class="column-cell hole-row" id="hole-cell">Hole</div>
-			<div class="tee-row" id="tee-name-options-cell">
+			<div class="column-cell label-cell hole-row" id="hole-cell">Hole</div>
+			<div class="column-cell label-cell tee-row" id="tee-name-options-cell">
 				<label id="tee-name-options-label">Tee</label>
 				<select id="tee-name-options" onchange="updateCells()"></select>
 			</div>
-			<div class="column-cell par-row" id="par-column-1">Par</div>
-			<div class="column-cell handicap-row" id="handicap-column-1">Handicap</div>
+			<div class="column-cell label-cell par-row" id="par-column-1">Par</div>
+			<div class="column-cell label-cell handicap-row" id="handicap-column-1">Handicap</div>
 
 			<!------   player name inputs     ---------->
-			<div class="column-cell player1-row  player-name-input-cell" id="player1-input-cell">
+			<div class="column-cell label-cell player1-row  player-name-input-cell" id="player1-input-cell">
 				<input type="text" class="player-name-input" placeholder="player1 name">
 			</div>
-			<div class="column-cell player1-row player-name-cell collapsed"  id="player1-cell">
-			</div>
 
-			<div class="column-cell player2-row  player-name-input-cell" id="player2-input-cell">
+			<div class="column-cell label-cell player2-row  player-name-input-cell" id="player2-input-cell">
 				<input type="text" class="player-name-input" placeholder="player2 name">
 			</div>
-			<div class="column-cell player2-row player-name-cell collapsed"  id="player2-cell">
-			</div>
 
-			<div class="column-cell player3-row  player-name-input-cell" id="player3-input-cell">
+			<div class="column-cell label-cell player3-row  player-name-input-cell" id="player3-input-cell">
 				<input type="text" class="player-name-input" placeholder="player3 name">
 			</div>
-			<div class="column-cell player3-row player-name-cell collapsed"  id="player3-cell">
-			</div>
 
-			<div class="column-cell player4-row bottom-row  player-name-input-cell" id="player4-input-cell">
+
+			<div class="column-cell label-cell player4-row bottom-row  player-name-input-cell" id="player4-input-cell">
 				<input type="text" class="player-name-input" placeholder="player4 name">
 			</div>
-			<div class="column-cell player4-row bottom-row player-name-cell collapsed"  id="player4-cell">
-			</div>
+
 		</div>
 
 
@@ -161,14 +155,14 @@
 		</div>
 
 		<div class="card-column total-column" id="out-column">
-			<div class="column-cell hole-row" id="hole-cell-out">Out</div>
-			<div class="column-cell tee-row" id="tee-cell-out"></div>
-			<div class="column-cell par-row" id="par-cell-out"></div>
-			<div class="column-cell handicap-row" id="handicap-cell-out"></div>
-			<div class="column-cell player1-row" id="player1-cell-out"></div>
-			<div class="column-cell player2-row" id="player2-cell-out"></div>
-			<div class="column-cell player3-row" id="player3-cell-out"></div>
-			<div class="column-cell player4-row bottom-row" id="player4-cell-out"></div>
+			<div class="column-cell total-cell hole-row" id="hole-cell-out">Out</div>
+			<div class="column-cell total-cell tee-row" id="tee-cell-out"></div>
+			<div class="column-cell total-cell par-row" id="par-cell-out"></div>
+			<div class="column-cell total-cell handicap-row" id="handicap-cell-out"></div>
+			<div class="column-cell total-cell player1-row" id="player1-cell-out"></div>
+			<div class="column-cell total-cell player2-row" id="player2-cell-out"></div>
+			<div class="column-cell total-cell player3-row" id="player3-cell-out"></div>
+			<div class="column-cell total-cell player4-row bottom-row" id="player4-cell-out"></div>
 		</div>
 
 
@@ -272,36 +266,36 @@
 		</div>
 
 		<div class="card-column total-column" id="in-column">
-			<div class="column-cell hole-row" id="hole-cell-in">In</div>
-			<div class="column-cell tee-row" id="tee-cell-in"></div>
-			<div class="column-cell par-row" id="par-cell-in"></div>
-			<div class="column-cell handicap-row" id="handicap-cell-in"></div>
-			<div class="column-cell player1-row" id="player1-cell-in"></div>
-			<div class="column-cell player2-row" id="player2-cell-in"></div>
-			<div class="column-cell player3-row" id="player3-cell-in"></div>
-			<div class="column-cell player4-row bottom-row" id="player4-cell-in"></div>
+			<div class="column-cell total-cell hole-row" id="hole-cell-in">In</div>
+			<div class="column-cell total-cell tee-row" id="tee-cell-in"></div>
+			<div class="column-cell total-cell par-row" id="par-cell-in"></div>
+			<div class="column-cell total-cell handicap-row" id="handicap-cell-in"></div>
+			<div class="column-cell total-cell player1-row" id="player1-cell-in"></div>
+			<div class="column-cell total-cell player2-row" id="player2-cell-in"></div>
+			<div class="column-cell total-cell player3-row" id="player3-cell-in"></div>
+			<div class="column-cell total-cell player4-row bottom-row" id="player4-cell-in"></div>
 		</div>
 
 		<div class="card-column total-column" id="total-column">
-			<div class="column-cell hole-row" id="hole-cell-total">Total</div>
-			<div class="column-cell tee-row" id="tee-cell-total"></div>
-			<div class="column-cell par-row" id="par-cell-total"></div>
-			<div class="column-cell handicap-row" id="handicap-cell-total"></div>
-			<div class="column-cell player1-row" id="player1-cell-total"></div>
-			<div class="column-cell player2-row" id="player2-cell-total"></div>
-			<div class="column-cell player3-row" id="player3-cell-total"></div>
-			<div class="column-cell player4-row bottom-row" id="player4-cell-total"></div>
+			<div class="column-cell total-cell  hole-row" id="hole-cell-total">Total</div>
+			<div class="column-cell total-cell tee-row" id="tee-cell-total"></div>
+			<div class="column-cell total-cell par-row" id="par-cell-total"></div>
+			<div class="column-cell total-cell handicap-row" id="handicap-cell-total"></div>
+			<div class="column-cell total-cell player1-row" id="player1-cell-total"></div>
+			<div class="column-cell total-cell player2-row" id="player2-cell-total"></div>
+			<div class="column-cell total-cell player3-row" id="player3-cell-total"></div>
+			<div class="column-cell total-cell player4-row bottom-row" id="player4-cell-total"></div>
 		</div>
 
 		<div class="card-column total-column last-column" id="hcp-column">
-			<div class="column-cell hole-row" id="hole-cell-hcp">HCP</div>
-			<div class="column-cell tee-row" id="tee-cell-hcp"></div>
-			<div class="column-cell par-row" id="par-cell-hcp"></div>
-			<div class="column-cell handicap-row" id="handicap-cell-hcp"></div>
-			<div class="column-cell player1-row" id="player1-cell-hcp"></div>
-			<div class="column-cell player2-row" id="player2-cell-hcp"></div>
-			<div class="column-cell player3-row" id="player3-cell-hcp"></div>
-			<div class="column-cell player4-row bottom-row" id="player4-cell-hcp"></div>
+			<div class="column-cell total-cell hole-row" id="hole-cell-hcp">HCP</div>
+			<div class="column-cell total-cell tee-row" id="tee-cell-hcp"></div>
+			<div class="column-cell total-cell par-row" id="par-cell-hcp"></div>
+			<div class="column-cell total-cell handicap-row" id="handicap-cell-hcp"></div>
+			<div class="column-cell total-cell player1-row" id="player1-cell-hcp"></div>
+			<div class="column-cell total-cell player2-row" id="player2-cell-hcp"></div>
+			<div class="column-cell total-cell player3-row" id="player3-cell-hcp"></div>
+			<div class="column-cell total-cell player4-row bottom-row" id="player4-cell-hcp"></div>
 		</div>
 
 	</div>
@@ -309,8 +303,8 @@
 <!-------------------
 	<div id="images-container">
 
-		<img src="bill-murray.jpg">
-		<img src="tenor.gif">
+		<img src="images/bill-murray.jpg">
+		<img src="images/tenor.gif">
 
 	</div>
 ----------------------->

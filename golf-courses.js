@@ -71,6 +71,8 @@ function updateTeesAndCells(){
 	loadCourse(currentCourseHref);
 }
 
+// $("div:not(:has(h1))")
+
 
 function loadCurrentCourseIndex(){
 	currentCourseIndex =  $('#course-name-options').val();
@@ -152,19 +154,28 @@ function fillEveryTeeCellWithYardage(){
 }
 
 
-function fillHoleCells(rowClass, array){
+function fillHoleCells(rowClass, dataForCells){
+	var selector = '.' + rowClass + ':not(.total-cell):not(.label-cell)';
+	var cells = $(selector);
+	console.log(cells);
+	for (var i=0;  i < cells.length;  ++i){
+		cells[i].innerText = (dataForCells[i]);
+	}
+}
+
+
+function fillTotalCells(){
 
 }
 
 
 function loadYardagesOfCurrentTeeForEachHole(){
-	// Get number of yards for each hole (based on selected tee) by writing:
-	// holes[i].tee_boxes[currentTeeIndex].yards
+
 	yardagesOfCurrentTeeForEachHole = [];
 	for (var hole=0, thisHole;  hole < course.holes.length;  ++hole){
 		thisHole = course.holes[hole];
 
-		for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length;  ++tee_box){
+		for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length; ++tee_box){
 			currentTee = thisHole.tee_boxes[tee_box];
 			if (currentTee.tee_type === currentTeeName){
 				yardagesOfCurrentTeeForEachHole.push(currentTee.yards);
@@ -172,8 +183,7 @@ function loadYardagesOfCurrentTeeForEachHole(){
 			}
 		}
 
-		if ( yardagesOfCurrentTeeForEachHole[hole] === null ||
-			yardagesOfCurrentTeeForEachHole[hole] === undefined){
+		if ( ! yardagesOfCurrentTeeForEachHole[hole]){
 			yardagesOfCurrentTeeForEachHole.push(' - ');
 		}
 	}
