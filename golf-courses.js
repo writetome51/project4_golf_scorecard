@@ -11,9 +11,16 @@ var currentTeeIndex;
 var currentCourseHref;
 var teeTypes=[];
 var teeYardages;
+var yardagesOfCurrentTeeForEachHole = [];
 
 
-loadEverything();
+$(document).ready(function(){
+
+	loadEverything();
+
+});
+
+
 
 
 function loadEverything(){
@@ -21,7 +28,7 @@ function loadEverything(){
 		local_obj,
 		function(data){
 			loadAllCourseData(data);
-			updateTeesAndCard();
+
 			loadEvents();
 		}
 	);
@@ -30,9 +37,9 @@ function loadEverything(){
 
 function loadAllCourseData(data){
 	loadCourses(data);
-	//console.log(courses);
 	loadCourseNames();
 	loadCourseNameOptions();
+	updateTeesAndCells();
 }
 
 
@@ -58,11 +65,10 @@ function loadCourseNameOptions(){
 
 
 
-function updateTeesAndCard(){
+function updateTeesAndCells(){
 	loadCurrentCourseIndex();
 	loadCurrentCourseHref();
 	loadCourse(currentCourseHref);
-	updateCard();
 }
 
 
@@ -86,10 +92,9 @@ function loadCourse(href){
 		loadTeeTypes();
 		loadTeeNames();
 		loadTeeNameOptions();
+		updateCells();
 	});
 }
-
-
 
 
 
@@ -116,10 +121,8 @@ function loadTeeNameOptions(){
 }
 
 
-// Get number of yards for each hole (based on selected tee) by writing:
-// holes[i].tee_boxes[currentTeeIndex].yards
 
-function updateCard(){
+function updateCells(){
 	fillTeeRow();
 
 }
@@ -128,7 +131,8 @@ function updateCard(){
 function fillTeeRow(){
 	loadCurrentTeeIndex();
 	loadCurrentTeeName();
-	fillEveryHoleCellWithYardage();
+	fillEveryTeeCellWithYardage();
+	//fillTotalCells();
 }
 
 
@@ -136,8 +140,48 @@ function loadCurrentTeeIndex(){
 	currentTeeIndex =  $('#tee-name-options').val();
 }
 
+
 function loadCurrentTeeName(){
 	currentTeeName = teeNames[currentTeeIndex];
+}
+
+
+function fillEveryTeeCellWithYardage(){
+	loadYardagesOfCurrentTeeForEachHole();
+	fillHoleCells('tee-row', yardagesOfCurrentTeeForEachHole);
+}
+
+
+function fillHoleCells(rowClass, array){
+
+}
+
+
+function loadYardagesOfCurrentTeeForEachHole(){
+	// Get number of yards for each hole (based on selected tee) by writing:
+	// holes[i].tee_boxes[currentTeeIndex].yards
+	yardagesOfCurrentTeeForEachHole = [];
+	for (var hole=0, thisHole;  hole < course.holes.length;  ++hole){
+		thisHole = course.holes[hole];
+
+		for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length;  ++tee_box){
+			currentTee = thisHole.tee_boxes[tee_box];
+			if (currentTee.tee_type === currentTeeName){
+				yardagesOfCurrentTeeForEachHole.push(currentTee.yards);
+				break;
+			}
+		}
+
+		if ( yardagesOfCurrentTeeForEachHole[hole] === null ||
+			yardagesOfCurrentTeeForEachHole[hole] === undefined){
+			yardagesOfCurrentTeeForEachHole.push(' - ');
+		}
+	}
+}
+
+
+function fillTotalCells(){
+
 }
 
 
@@ -145,7 +189,8 @@ function loadEvents(){
 	$('.player-name-input').blur(function(){
 		var name = $(this).val();
 		if (name !== ''){
-			var cell = $(this).closest('.player-name-input-container').next('.player-name-cell');
+			var cell = $(this).closest('.player-name-input-container')
+				.next('.player-name-cell');
 
 			$(this).closest('.player-name-input-container').addClass('collapsed');
 			cell.removeClass('collapsed');
