@@ -132,39 +132,22 @@ function loadTeeNameOptions(){
 
 function updateCells(){
 	loadCurrentTee();
-	loadDataOfCurrentTeeForEachHole();
+	loadFetchedDataForEachHole();
 	fillRowsRepresentingFetchedData();
 }
 
 
 function fillRowsRepresentingFetchedData(){
-	fillTeeRow();
-	fillParRow();
-	fillHandicapRow();
+	for (var p in fetchedDataForEachHole){
+		fillHoleCells(p + '-row', fetchedDataForEachHole[p]);
+		fillTotalCells(p);
+	}
 }
 
 
 function loadCurrentTee(){
 	loadCurrentTeeIndex();
 	loadCurrentTeeName();
-}
-
-
-function fillTeeRow(){
-	fillHoleCells('yards-row', fetchedDataForEachHole.yards);
-	fillTotalCells('yards');
-}
-
-
-function fillParRow(){
-	fillHoleCells('par-row', fetchedDataForEachHole.par);
-	fillTotalCells('par');
-}
-
-
-function fillHandicapRow(){
-	fillHoleCells('hcp-row', fetchedDataForEachHole.hcp);
-	fillTotalCells('hcp');
 }
 
 
@@ -219,37 +202,56 @@ function getTally(arrayToTally){
 
 
 
-function loadDataOfCurrentTeeForEachHole(){
+function loadFetchedDataForEachHole(){
+	clearFetchedData();
+	fillFetchedData();
+}
 
-	for (var p in fetchedDataForEachHole){
-		fetchedDataForEachHole[p] = [];
-	}
 
+
+function fillFetchedData(){
 	for (var hole=0, thisHole;  hole < course.holes.length;  ++hole){
 		thisHole = course.holes[hole];
 
 		for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length; ++tee_box){
 			currentTee = thisHole.tee_boxes[tee_box];
 			if (currentTee.tee_type === currentTeeName){
-				fetchedDataForEachHole.yards.push(currentTee.yards);
-				fetchedDataForEachHole.par.push(currentTee.par);
-				fetchedDataForEachHole.hcp.push(currentTee.hcp);
+				for(var p in fetchedDataForEachHole){
+					fetchedDataForEachHole[p].push(currentTee[p]);
+				}
 				break;
 			}
 		}
-		for (var p in fetchedDataForEachHole){
-			if ( ! fetchedDataForEachHole[p][hole]){
-				fetchedDataForEachHole[p][hole] = ' - ';
-			}
-		}
+		ifNoDataForThisHole_FillWithDash(hole);
 	}
 
+	appendDashesToFetchedDataUntilAllHave18Items();
+}
+
+
+
+function clearFetchedData() {
+	for (var p in fetchedDataForEachHole){
+		fetchedDataForEachHole[p] = [];
+	}
+}
+
+
+function ifNoDataForThisHole_FillWithDash(item){
+	for (var p in fetchedDataForEachHole){
+		if ( ! fetchedDataForEachHole[p][item]){
+			fetchedDataForEachHole[p][item] = ' - ';
+		}
+	}
+}
+
+
+function appendDashesToFetchedDataUntilAllHave18Items() {
 	for (var p in fetchedDataForEachHole){
 		while (fetchedDataForEachHole[p].length < 18){
 			fetchedDataForEachHole[p].push(' - ');
 		}
 	}
-
 }
 
 
