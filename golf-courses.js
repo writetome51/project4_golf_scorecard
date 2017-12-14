@@ -297,41 +297,18 @@ function loadPlayerStrokes(player){
 
 
 function loadEvents(){
-	$('.player1-row .strokes-input').keyup(function(){
+
+	$('.strokes-input').keyup(function(){
 		var value = $(this).val();
-		if (isNaN(value)){
+		if (isNaN(value)) {
 			$(this).val(0);
 		}
-		else{
-			updateStrokeTotals('player1');
-		}
-	});
-	$('.player2-row .strokes-input').keyup(function(){
-		var value = $(this).val();
-		if (isNaN(value)){
-			$(this).val(0);
-		}
-		else{
-			updateStrokeTotals('player2');
-		}
-	});
-	$('.player3-row .strokes-input').keyup(function(){
-		var value = $(this).val();
-		if (isNaN(value)){
-			$(this).val(0);
-		}
-		else{
-			updateStrokeTotals('player3');
-		}
-	});
-	$('.player4-row .strokes-input').keyup(function(){
-		var value = $(this).val();
-		if (isNaN(value)){
-			$(this).val(0);
-		}
-		else{
-			updateStrokeTotals('player4');
-		}
+
+		var parent = $(this).closest('.strokes-input-cell');
+		var id = parent.attr('id');
+		var parts = id.split('-');
+		var player = parts[0];
+		updateStrokeTotals(player);
 	});
 
 }
