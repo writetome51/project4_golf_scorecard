@@ -297,7 +297,7 @@ function loadPlayerStrokes(player){
 
 
 function loadEvents(){
-	$('.player1-row .strokes-input').blur(function(){
+	$('.player1-row .strokes-input').keyup(function(){
 		var value = $(this).val();
 		if (isNaN(value)){
 			$(this).val(0);
@@ -306,7 +306,7 @@ function loadEvents(){
 			updateStrokeTotals('player1');
 		}
 	});
-	$('.player2-row .strokes-input').blur(function(){
+	$('.player2-row .strokes-input').keyup(function(){
 		var value = $(this).val();
 		if (isNaN(value)){
 			$(this).val(0);
@@ -315,7 +315,7 @@ function loadEvents(){
 			updateStrokeTotals('player2');
 		}
 	});
-	$('.player3-row .strokes-input').blur(function(){
+	$('.player3-row .strokes-input').keyup(function(){
 		var value = $(this).val();
 		if (isNaN(value)){
 			$(this).val(0);
@@ -324,7 +324,7 @@ function loadEvents(){
 			updateStrokeTotals('player3');
 		}
 	});
-	$('.player4-row .strokes-input').blur(function(){
+	$('.player4-row .strokes-input').keyup(function(){
 		var value = $(this).val();
 		if (isNaN(value)){
 			$(this).val(0);
