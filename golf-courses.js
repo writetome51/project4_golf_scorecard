@@ -12,7 +12,7 @@ var currentCourseHref;
 var teeTypes=[];
 
 var fetchedDataForEachHole = {
-	yards:[], // actually holds yardage count from tee for each hole.
+	yards:[],
 	par:[],
 	hcp:[]
 };
@@ -213,19 +213,25 @@ function fillFetchedData(){
 	for (var hole=0, thisHole;  hole < course.holes.length;  ++hole){
 		thisHole = course.holes[hole];
 
-		for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length; ++tee_box){
-			currentTee = thisHole.tee_boxes[tee_box];
-			if (currentTee.tee_type === currentTeeName){
-				for(var p in fetchedDataForEachHole){
-					fetchedDataForEachHole[p].push(currentTee[p]);
-				}
-				break;
-			}
-		}
+		findCorrectTeeBoxAndGetDataFor(thisHole);
 		ifNoDataForThisHole_FillWithDash(hole);
 	}
 
 	appendDashesToFetchedDataUntilAllHave18Items();
+}
+
+
+function findCorrectTeeBoxAndGetDataFor(thisHole){
+	for (var tee_box=0, currentTee; tee_box < thisHole.tee_boxes.length; ++tee_box){
+		currentTee = thisHole.tee_boxes[tee_box];
+		if (currentTee.tee_type === currentTeeName){
+			for(var p in fetchedDataForEachHole){
+				fetchedDataForEachHole[p].push(currentTee[p]);
+			}
+
+			break;
+		}
+	}
 }
 
 
